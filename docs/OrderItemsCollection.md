@@ -1,4 +1,4 @@
-# @ManageiqCatalogJsApiClient.OrderItemsCollection
+# @ManageiqCatalogApiJsclient.OrderItemsCollection
 
 ## Properties
 Name | Type | Description | Notes

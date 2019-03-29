@@ -1,11 +1,11 @@
-# @ManageiqCatalogJsApiClient.ServicePlan
+# @ManageiqCatalogApiJsclient.ServicePlan
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the Service Plan | [optional] 
-**description** | **String** | The Service Plan description | [optional] 
-**id** | **String** | The unique identifier for this Service Plan | [optional] 
-**createJsonSchema** | [**Object**](.md) | JSON Schema for the object | [optional] 
+**name** | **String** | The name of the service plan. | [optional] 
+**description** | **String** | The service plan description. | [optional] 
+**id** | **String** | The unique identifier for this service plan. | [optional] 
+**createJsonSchema** | [**Object**](.md) | JSON schema for the object. | [optional] 
 
 

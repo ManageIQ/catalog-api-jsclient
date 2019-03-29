@@ -1,4 +1,4 @@
-# @ManageiqCatalogJsApiClient.CollectionLinks
+# @ManageiqCatalogApiJsclient.CollectionLinks
 
 ## Properties
 Name | Type | Description | Notes

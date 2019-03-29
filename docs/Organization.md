@@ -1,4 +1,4 @@
-# @ManageiqCatalogJsApiClient.Organization
+# @ManageiqCatalogApiJsclient.Organization
 
 ## Properties
 Name | Type | Description | Notes

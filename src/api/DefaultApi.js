@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -36,8 +36,8 @@ export default class DefaultApi {
 
 
     /**
-     * Edit an existing Portfolio Item
-     * Returns the edited Portfolio Item Object
+     * Edit an existing portfolio item
+     * Edits portfolio item specified by the given ID.
      * @param {String} id ID of the resource
      * @param {module:model/PortfolioItem} portfolioItem Parameters needed to update a Portfolio Item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PortfolioItem} and HTTP response
@@ -79,8 +79,8 @@ export default class DefaultApi {
     }
 
     /**
-     * Edit an existing Portfolio Item
-     * Returns the edited Portfolio Item Object
+     * Edit an existing portfolio item
+     * Edits portfolio item specified by the given ID.
      * @param {String} id ID of the resource
      * @param {module:model/PortfolioItem} portfolioItem Parameters needed to update a Portfolio Item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PortfolioItem}

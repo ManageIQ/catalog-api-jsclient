@@ -1,4 +1,4 @@
-# @ManageiqCatalogJsApiClient.ProgressMessagesCollection
+# @ManageiqCatalogApiJsclient.ProgressMessagesCollection
 
 ## Properties
 Name | Type | Description | Notes

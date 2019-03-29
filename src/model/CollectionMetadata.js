@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -58,7 +58,7 @@ class CollectionMetadata {
 }
 
 /**
- * This is the total number of items in the result set, of which only a subset is returned defined by the QueryLimit parameter
+ * Total number of items in the result set, of which only a subset is returned, defined by the QueryLimit parameter.
  * @member {Number} count
  */
 CollectionMetadata.prototype['count'] = undefined;

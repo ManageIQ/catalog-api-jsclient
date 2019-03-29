@@ -1,35 +1,36 @@
-# @ManageiqCatalogJsApiClient.UsersApi
+# @ManageiqCatalogApiJsclient.UsersApi
 
 All URIs are relative to *https://localhost/api/catalog*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addToOrder**](UsersApi.md#addToOrder) | **POST** /orders/{order_id}/order_items | Add an Order Item to the Order in Pending State
-[**fetchPortfolioItemsWithPortfolio**](UsersApi.md#fetchPortfolioItemsWithPortfolio) | **GET** /portfolios/{portfolio_id}/portfolio_items | Fetch all portfolio items from a specific portfolio
-[**listOrderItems**](UsersApi.md#listOrderItems) | **GET** /orders/{order_id}/order_items | Get a list of items in a given order
+[**addToOrder**](UsersApi.md#addToOrder) | **POST** /orders/{order_id}/order_items | Add an order item to an order in pending state
+[**fetchPortfolioItemsWithPortfolio**](UsersApi.md#fetchPortfolioItemsWithPortfolio) | **GET** /portfolios/{portfolio_id}/portfolio_items | Get all portfolio items from a specific portfolio
+[**listOrderItems**](UsersApi.md#listOrderItems) | **GET** /orders/{order_id}/order_items | Gets a list of items in a given order
 [**listOrders**](UsersApi.md#listOrders) | **GET** /orders | Get a list of orders
-[**listPortfolioItems**](UsersApi.md#listPortfolioItems) | **GET** /portfolio_items | API to list all portfolio items
-[**listPortfolios**](UsersApi.md#listPortfolios) | **GET** /portfolios | API to list portfolios
-[**listProgressMessages**](UsersApi.md#listProgressMessages) | **GET** /order_items/{order_item_id}/progress_messages | Get a list of progress messages in an item
-[**listProviderControlParameters**](UsersApi.md#listProviderControlParameters) | **GET** /portfolio_items/{portfolio_item_id}/provider_control_parameters | Fetches the provider control parameters for this portfolio item, it needs to be provided when provisioning the portfolio item.
-[**listServicePlans**](UsersApi.md#listServicePlans) | **GET** /portfolio_items/{portfolio_item_id}/service_plans | Fetches all the service plans for a specific portfolio item, this requires a connection to the topology service.
-[**showOrderItem**](UsersApi.md#showOrderItem) | **GET** /orders/{order_id}/order_items/{id} | Get an individual order item from a given order
-[**showPortfolio**](UsersApi.md#showPortfolio) | **GET** /portfolios/{id} | Fetch a specific Portfolio
-[**showPortfolioItem**](UsersApi.md#showPortfolioItem) | **GET** /portfolio_items/{id} | Fetch a specific Portfolio Item
+[**listPortfolioItems**](UsersApi.md#listPortfolioItems) | **GET** /portfolio_items | List all portfolio items
+[**listPortfolios**](UsersApi.md#listPortfolios) | **GET** /portfolios | List portfolios
+[**listProgressMessages**](UsersApi.md#listProgressMessages) | **GET** /order_items/{order_item_id}/progress_messages | Gets a list of progress messages in an item
+[**listProviderControlParameters**](UsersApi.md#listProviderControlParameters) | **GET** /portfolio_items/{portfolio_item_id}/provider_control_parameters | Gets the provider control parameters for this portfolio item; requires control paramaters provided when provisioning the portfolio item.
+[**listServicePlans**](UsersApi.md#listServicePlans) | **GET** /portfolio_items/{portfolio_item_id}/service_plans | Gets all service plans for a specific portfolio item; requires a connection to the topology service.
+[**shareInfo**](UsersApi.md#shareInfo) | **GET** /portfolios/{portfolio_id}/share_info | Fetch share information about this portfolio, the response would include a collection of groups and permissions with each group
+[**showOrderItem**](UsersApi.md#showOrderItem) | **GET** /orders/{order_id}/order_items/{id} | Gets an individual order item from a given order
+[**showPortfolio**](UsersApi.md#showPortfolio) | **GET** /portfolios/{id} | Get a specific portfolio
+[**showPortfolioItem**](UsersApi.md#showPortfolioItem) | **GET** /portfolio_items/{id} | Gets a specific portfolio item
 
 
 <a name="addToOrder"></a>
 # **addToOrder**
 > addToOrder(orderId, orderItem)
 
-Add an Order Item to the Order in Pending State
+Add an order item to an order in pending state
 
-Add an order item to the order in Pending State 
+Adds an order item to an order in pending state 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -42,9 +43,9 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let orderId = "orderId_example"; // String | The Order ID
-let orderItem = new @ManageiqCatalogJsApiClient.OrderItem(); // OrderItem | 
+let orderItem = new @ManageiqCatalogApiJsclient.OrderItem(); // OrderItem | 
 apiInstance.addToOrder(orderId, orderItem).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -77,14 +78,14 @@ null (empty response body)
 # **fetchPortfolioItemsWithPortfolio**
 > PortfolioItemsCollection fetchPortfolioItemsWithPortfolio(portfolioId, opts)
 
-Fetch all portfolio items from a specific portfolio
+Get all portfolio items from a specific portfolio
 
-By passing in the portfolio id you can fetch all the portfolio items in the portfolio. 
+Gets all portfilio items in the portfolio specified by the given ID. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -97,7 +98,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let portfolioId = "portfolioId_example"; // String | The Portfolio ID
 let opts = {
   'limit': 100, // Number | The numbers of items to return per page.
@@ -136,14 +137,14 @@ Name | Type | Description  | Notes
 # **listOrderItems**
 > OrderItemsCollection listOrderItems(orderId, opts)
 
-Get a list of items in a given order
+Gets a list of items in a given order
 
-Get a list of items associated with an order. 
+Gets a list of items associated with an order. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -156,7 +157,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let orderId = "orderId_example"; // String | The Order ID
 let opts = {
   'limit': 100, // Number | The numbers of items to return per page.
@@ -197,12 +198,12 @@ Name | Type | Description  | Notes
 
 Get a list of orders
 
-Get a list of orders associated with the logged in user. 
+Gets a list of orders associated with the logged in user. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -215,7 +216,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let opts = {
   'limit': 100, // Number | The numbers of items to return per page.
   'offset': 0 // Number | The number of items to skip before starting to collect the result set.
@@ -252,14 +253,14 @@ Name | Type | Description  | Notes
 # **listPortfolioItems**
 > PortfolioItemsCollection listPortfolioItems(opts)
 
-API to list all portfolio items
+List all portfolio items
 
-Returns a PortfolioItemsCollection object with an embedded array of portfolio item objects 
+Gets a list of portfolio items. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -272,7 +273,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let opts = {
   'limit': 100, // Number | The numbers of items to return per page.
   'offset': 0 // Number | The number of items to skip before starting to collect the result set.
@@ -309,14 +310,14 @@ Name | Type | Description  | Notes
 # **listPortfolios**
 > PortfoliosCollection listPortfolios(opts)
 
-API to list portfolios
+List portfolios
 
-Returns a PortfoliosCollection object with an embedded array of portfolio objects 
+Gets a list of portfolios. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -329,7 +330,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let opts = {
   'limit': 100, // Number | The numbers of items to return per page.
   'offset': 0 // Number | The number of items to skip before starting to collect the result set.
@@ -366,14 +367,14 @@ Name | Type | Description  | Notes
 # **listProgressMessages**
 > ProgressMessagesCollection listProgressMessages(orderItemId, opts)
 
-Get a list of progress messages in an item
+Gets a list of progress messages in an item
 
-Get a list of progress messages associated with an order item. As the item is being processed the provider can update the progress messages 
+Gets a list of progress messages associated with an order item. As the item is being processed the provider can update the progress messages. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -386,7 +387,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let orderItemId = "orderItemId_example"; // String | The Order Item ID
 let opts = {
   'limit': 100, // Number | The numbers of items to return per page.
@@ -425,14 +426,14 @@ Name | Type | Description  | Notes
 # **listProviderControlParameters**
 > ProviderControlParameters listProviderControlParameters(portfolioItemId)
 
-Fetches the provider control parameters for this portfolio item, it needs to be provided when provisioning the portfolio item.
+Gets the provider control parameters for this portfolio item; requires control paramaters provided when provisioning the portfolio item.
 
-Fetch provider control parameters for a portfolio item 
+Gets the provider control parameters for a portfolio item. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -445,7 +446,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let portfolioItemId = "portfolioItemId_example"; // String | The Portfolio Item ID
 apiInstance.listProviderControlParameters(portfolioItemId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -478,14 +479,14 @@ Name | Type | Description  | Notes
 # **listServicePlans**
 > [ServicePlan] listServicePlans(portfolioItemId)
 
-Fetches all the service plans for a specific portfolio item, this requires a connection to the topology service.
+Gets all service plans for a specific portfolio item; requires a connection to the topology service.
 
-Fetch all service plans for a portfolio item 
+Gets all service plans for a portfolio item. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -498,7 +499,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let portfolioItemId = "portfolioItemId_example"; // String | The Portfolio Item ID
 apiInstance.listServicePlans(portfolioItemId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -527,18 +528,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="showOrderItem"></a>
-# **showOrderItem**
-> OrderItem showOrderItem(orderId, id)
+<a name="shareInfo"></a>
+# **shareInfo**
+> [ShareInfo] shareInfo(portfolioId)
 
-Get an individual order item from a given order
+Fetch share information about this portfolio, the response would include a collection of groups and permissions with each group
 
-Get an order item associated with an order. 
+Fetch share information about a portfolio 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -551,7 +552,60 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
+let portfolioId = "portfolioId_example"; // String | The Portfolio ID
+apiInstance.shareInfo(portfolioId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **portfolioId** | **String**| The Portfolio ID | 
+
+### Return type
+
+[**[ShareInfo]**](ShareInfo.md)
+
+### Authorization
+
+[APIKeyAuth](../README.md#APIKeyAuth), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="showOrderItem"></a>
+# **showOrderItem**
+> OrderItem showOrderItem(orderId, id)
+
+Gets an individual order item from a given order
+
+Gets an order item associated with an order. 
+
+### Example
+```javascript
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
+
+// Configure API key authorization: APIKeyAuth
+let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
+APIKeyAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//APIKeyAuth.apiKeyPrefix = 'Token';
+
+// Configure HTTP basic authorization: BasicAuth
+let BasicAuth = defaultClient.authentications['BasicAuth'];
+BasicAuth.username = 'YOUR USERNAME';
+BasicAuth.password = 'YOUR PASSWORD';
+
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let orderId = "orderId_example"; // String | The Order ID
 let id = "id_example"; // String | ID of the resource
 apiInstance.showOrderItem(orderId, id).then((data) => {
@@ -586,14 +640,14 @@ Name | Type | Description  | Notes
 # **showPortfolio**
 > Portfolio showPortfolio(id)
 
-Fetch a specific Portfolio
+Get a specific portfolio
 
-By passing in the portfolio id you can fetch a specific portfolio. 
+Gets the portfolio specified by the portfolio ID. 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -606,7 +660,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let id = "id_example"; // String | ID of the resource
 apiInstance.showPortfolio(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -639,14 +693,14 @@ Name | Type | Description  | Notes
 # **showPortfolioItem**
 > PortfolioItem showPortfolioItem(id)
 
-Fetch a specific Portfolio Item
+Gets a specific portfolio item
 
-By passing in the portfolio_item_id you can fetch a specific portfolio item 
+Gets a specific portfolio item based on the portfolio item ID passed 
 
 ### Example
 ```javascript
-import @ManageiqCatalogJsApiClient from '@manageiq/catalog-js-api-client';
-let defaultClient = @ManageiqCatalogJsApiClient.ApiClient.instance;
+import @ManageiqCatalogApiJsclient from '@manageiq/catalog-api-jsclient';
+let defaultClient = @ManageiqCatalogApiJsclient.ApiClient.instance;
 
 // Configure API key authorization: APIKeyAuth
 let APIKeyAuth = defaultClient.authentications['APIKeyAuth'];
@@ -659,7 +713,7 @@ let BasicAuth = defaultClient.authentications['BasicAuth'];
 BasicAuth.username = 'YOUR USERNAME';
 BasicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new @ManageiqCatalogJsApiClient.UsersApi();
+let apiInstance = new @ManageiqCatalogApiJsclient.UsersApi();
 let id = "id_example"; // String | ID of the resource
 apiInstance.showPortfolioItem(id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

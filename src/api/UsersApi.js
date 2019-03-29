@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -23,6 +23,7 @@ import PortfoliosCollection from '../model/PortfoliosCollection';
 import ProgressMessagesCollection from '../model/ProgressMessagesCollection';
 import ProviderControlParameters from '../model/ProviderControlParameters';
 import ServicePlan from '../model/ServicePlan';
+import ShareInfo from '../model/ShareInfo';
 
 /**
 * Users service.
@@ -45,8 +46,8 @@ export default class UsersApi {
 
 
     /**
-     * Add an Order Item to the Order in Pending State
-     * Add an order item to the order in Pending State 
+     * Add an order item to an order in pending state
+     * Adds an order item to an order in pending state 
      * @param {String} orderId The Order ID
      * @param {module:model/OrderItem} orderItem 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -88,8 +89,8 @@ export default class UsersApi {
     }
 
     /**
-     * Add an Order Item to the Order in Pending State
-     * Add an order item to the order in Pending State 
+     * Add an order item to an order in pending state
+     * Adds an order item to an order in pending state 
      * @param {String} orderId The Order ID
      * @param {module:model/OrderItem} orderItem 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -103,8 +104,8 @@ export default class UsersApi {
 
 
     /**
-     * Fetch all portfolio items from a specific portfolio
-     * By passing in the portfolio id you can fetch all the portfolio items in the portfolio. 
+     * Get all portfolio items from a specific portfolio
+     * Gets all portfilio items in the portfolio specified by the given ID. 
      * @param {String} portfolioId The Portfolio ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
@@ -146,8 +147,8 @@ export default class UsersApi {
     }
 
     /**
-     * Fetch all portfolio items from a specific portfolio
-     * By passing in the portfolio id you can fetch all the portfolio items in the portfolio. 
+     * Get all portfolio items from a specific portfolio
+     * Gets all portfilio items in the portfolio specified by the given ID. 
      * @param {String} portfolioId The Portfolio ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
@@ -163,8 +164,8 @@ export default class UsersApi {
 
 
     /**
-     * Get a list of items in a given order
-     * Get a list of items associated with an order. 
+     * Gets a list of items in a given order
+     * Gets a list of items associated with an order. 
      * @param {String} orderId The Order ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
@@ -206,8 +207,8 @@ export default class UsersApi {
     }
 
     /**
-     * Get a list of items in a given order
-     * Get a list of items associated with an order. 
+     * Gets a list of items in a given order
+     * Gets a list of items associated with an order. 
      * @param {String} orderId The Order ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
@@ -224,7 +225,7 @@ export default class UsersApi {
 
     /**
      * Get a list of orders
-     * Get a list of orders associated with the logged in user. 
+     * Gets a list of orders associated with the logged in user. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
      * @param {Number} opts.offset The number of items to skip before starting to collect the result set. (default to 0)
@@ -260,7 +261,7 @@ export default class UsersApi {
 
     /**
      * Get a list of orders
-     * Get a list of orders associated with the logged in user. 
+     * Gets a list of orders associated with the logged in user. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
      * @param {Number} opts.offset The number of items to skip before starting to collect the result set. (default to 0)
@@ -275,8 +276,8 @@ export default class UsersApi {
 
 
     /**
-     * API to list all portfolio items
-     * Returns a PortfolioItemsCollection object with an embedded array of portfolio item objects 
+     * List all portfolio items
+     * Gets a list of portfolio items. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
      * @param {Number} opts.offset The number of items to skip before starting to collect the result set. (default to 0)
@@ -311,8 +312,8 @@ export default class UsersApi {
     }
 
     /**
-     * API to list all portfolio items
-     * Returns a PortfolioItemsCollection object with an embedded array of portfolio item objects 
+     * List all portfolio items
+     * Gets a list of portfolio items. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
      * @param {Number} opts.offset The number of items to skip before starting to collect the result set. (default to 0)
@@ -327,8 +328,8 @@ export default class UsersApi {
 
 
     /**
-     * API to list portfolios
-     * Returns a PortfoliosCollection object with an embedded array of portfolio objects 
+     * List portfolios
+     * Gets a list of portfolios. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
      * @param {Number} opts.offset The number of items to skip before starting to collect the result set. (default to 0)
@@ -363,8 +364,8 @@ export default class UsersApi {
     }
 
     /**
-     * API to list portfolios
-     * Returns a PortfoliosCollection object with an embedded array of portfolio objects 
+     * List portfolios
+     * Gets a list of portfolios. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
      * @param {Number} opts.offset The number of items to skip before starting to collect the result set. (default to 0)
@@ -379,8 +380,8 @@ export default class UsersApi {
 
 
     /**
-     * Get a list of progress messages in an item
-     * Get a list of progress messages associated with an order item. As the item is being processed the provider can update the progress messages 
+     * Gets a list of progress messages in an item
+     * Gets a list of progress messages associated with an order item. As the item is being processed the provider can update the progress messages. 
      * @param {String} orderItemId The Order Item ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
@@ -422,8 +423,8 @@ export default class UsersApi {
     }
 
     /**
-     * Get a list of progress messages in an item
-     * Get a list of progress messages associated with an order item. As the item is being processed the provider can update the progress messages 
+     * Gets a list of progress messages in an item
+     * Gets a list of progress messages associated with an order item. As the item is being processed the provider can update the progress messages. 
      * @param {String} orderItemId The Order Item ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit The numbers of items to return per page. (default to 100)
@@ -439,8 +440,8 @@ export default class UsersApi {
 
 
     /**
-     * Fetches the provider control parameters for this portfolio item, it needs to be provided when provisioning the portfolio item.
-     * Fetch provider control parameters for a portfolio item 
+     * Gets the provider control parameters for this portfolio item; requires control paramaters provided when provisioning the portfolio item.
+     * Gets the provider control parameters for a portfolio item. 
      * @param {String} portfolioItemId The Portfolio Item ID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProviderControlParameters} and HTTP response
      */
@@ -476,8 +477,8 @@ export default class UsersApi {
     }
 
     /**
-     * Fetches the provider control parameters for this portfolio item, it needs to be provided when provisioning the portfolio item.
-     * Fetch provider control parameters for a portfolio item 
+     * Gets the provider control parameters for this portfolio item; requires control paramaters provided when provisioning the portfolio item.
+     * Gets the provider control parameters for a portfolio item. 
      * @param {String} portfolioItemId The Portfolio Item ID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProviderControlParameters}
      */
@@ -490,8 +491,8 @@ export default class UsersApi {
 
 
     /**
-     * Fetches all the service plans for a specific portfolio item, this requires a connection to the topology service.
-     * Fetch all service plans for a portfolio item 
+     * Gets all service plans for a specific portfolio item; requires a connection to the topology service.
+     * Gets all service plans for a portfolio item. 
      * @param {String} portfolioItemId The Portfolio Item ID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServicePlan>} and HTTP response
      */
@@ -527,8 +528,8 @@ export default class UsersApi {
     }
 
     /**
-     * Fetches all the service plans for a specific portfolio item, this requires a connection to the topology service.
-     * Fetch all service plans for a portfolio item 
+     * Gets all service plans for a specific portfolio item; requires a connection to the topology service.
+     * Gets all service plans for a portfolio item. 
      * @param {String} portfolioItemId The Portfolio Item ID
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServicePlan>}
      */
@@ -541,8 +542,59 @@ export default class UsersApi {
 
 
     /**
-     * Get an individual order item from a given order
-     * Get an order item associated with an order. 
+     * Fetch share information about this portfolio, the response would include a collection of groups and permissions with each group
+     * Fetch share information about a portfolio 
+     * @param {String} portfolioId The Portfolio ID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ShareInfo>} and HTTP response
+     */
+    shareInfoWithHttpInfo(portfolioId) {
+      let postBody = null;
+
+      // verify the required parameter 'portfolioId' is set
+      if (portfolioId === undefined || portfolioId === null) {
+        throw new Error("Missing the required parameter 'portfolioId' when calling shareInfo");
+      }
+
+
+      let pathParams = {
+        'portfolio_id': portfolioId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['APIKeyAuth', 'BasicAuth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ShareInfo];
+
+      return this.apiClient.callApi(
+        '/portfolios/{portfolio_id}/share_info', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Fetch share information about this portfolio, the response would include a collection of groups and permissions with each group
+     * Fetch share information about a portfolio 
+     * @param {String} portfolioId The Portfolio ID
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ShareInfo>}
+     */
+    shareInfo(portfolioId) {
+      return this.shareInfoWithHttpInfo(portfolioId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Gets an individual order item from a given order
+     * Gets an order item associated with an order. 
      * @param {String} orderId The Order ID
      * @param {String} id ID of the resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrderItem} and HTTP response
@@ -585,8 +637,8 @@ export default class UsersApi {
     }
 
     /**
-     * Get an individual order item from a given order
-     * Get an order item associated with an order. 
+     * Gets an individual order item from a given order
+     * Gets an order item associated with an order. 
      * @param {String} orderId The Order ID
      * @param {String} id ID of the resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrderItem}
@@ -600,8 +652,8 @@ export default class UsersApi {
 
 
     /**
-     * Fetch a specific Portfolio
-     * By passing in the portfolio id you can fetch a specific portfolio. 
+     * Get a specific portfolio
+     * Gets the portfolio specified by the portfolio ID. 
      * @param {String} id ID of the resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Portfolio} and HTTP response
      */
@@ -637,8 +689,8 @@ export default class UsersApi {
     }
 
     /**
-     * Fetch a specific Portfolio
-     * By passing in the portfolio id you can fetch a specific portfolio. 
+     * Get a specific portfolio
+     * Gets the portfolio specified by the portfolio ID. 
      * @param {String} id ID of the resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Portfolio}
      */
@@ -651,8 +703,8 @@ export default class UsersApi {
 
 
     /**
-     * Fetch a specific Portfolio Item
-     * By passing in the portfolio_item_id you can fetch a specific portfolio item 
+     * Gets a specific portfolio item
+     * Gets a specific portfolio item based on the portfolio item ID passed 
      * @param {String} id ID of the resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PortfolioItem} and HTTP response
      */
@@ -688,8 +740,8 @@ export default class UsersApi {
     }
 
     /**
-     * Fetch a specific Portfolio Item
-     * By passing in the portfolio_item_id you can fetch a specific portfolio item 
+     * Gets a specific portfolio item
+     * Gets a specific portfolio item based on the portfolio item ID passed 
      * @param {String} id ID of the resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PortfolioItem}
      */

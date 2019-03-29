@@ -1,5 +1,5 @@
 {
-  "name": "@manageiq/catalog-js-api-client",
+  "name": "@manageiq/catalog-api-jsclient",
   "version": "1.0.0",
   "description": "This is a API to fetch and order catalog items from different cloud sources",
   "license": "Apache 2.0",

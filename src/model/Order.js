@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -86,7 +86,7 @@ Order.prototype['id'] = undefined;
 Order.prototype['user_id'] = undefined;
 
 /**
- * Current State of the order
+ * Current State of the order.
  * @member {module:model/Order.StateEnum} state
  */
 Order.prototype['state'] = undefined;

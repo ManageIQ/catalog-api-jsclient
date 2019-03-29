@@ -1,11 +1,11 @@
-# @ManageiqCatalogJsApiClient.Order
+# @ManageiqCatalogApiJsclient.Order
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **userId** | **String** |  | [optional] 
-**state** | **String** | Current State of the order | [optional] 
+**state** | **String** | Current State of the order. | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **orderedAt** | **Date** |  | [optional] 
 **completedAt** | **Date** |  | [optional] 
