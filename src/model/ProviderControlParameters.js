@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class ProviderControlParameters {
     /**
      * Constructs a new <code>ProviderControlParameters</code>.
-     * JSON Schema for Provider control parameters
+     * JSON Schema for Provider control parameters.
      * @alias module:model/ProviderControlParameters
      */
     constructor() { 

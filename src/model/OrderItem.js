@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -24,9 +24,9 @@ class OrderItem {
      * @alias module:model/OrderItem
      * @param count {Number} 
      * @param serviceParameters {Object} 
-     * @param providerControlParameters {Object} The provider specific parameters needed to provision this service. This might include namespaces, special keys
-     * @param servicePlanRef {String} Stores the Plan ref from the Topology Service
-     * @param portfolioItemId {String} Stores the Portfolio Item ID
+     * @param providerControlParameters {Object} The provider specific parameters needed to provision this service. This might include namespaces, special keys.
+     * @param servicePlanRef {String} Stores the service plan ref from the Topology Service.
+     * @param portfolioItemId {String} Stores the Portfolio Item ID.
      */
     constructor(count, serviceParameters, providerControlParameters, servicePlanRef, portfolioItemId) { 
         
@@ -117,25 +117,25 @@ OrderItem.prototype['count'] = 1;
 OrderItem.prototype['service_parameters'] = undefined;
 
 /**
- * The provider specific parameters needed to provision this service. This might include namespaces, special keys
+ * The provider specific parameters needed to provision this service. This might include namespaces, special keys.
  * @member {Object} provider_control_parameters
  */
 OrderItem.prototype['provider_control_parameters'] = undefined;
 
 /**
- * Stores the Plan ref from the Topology Service
+ * Stores the service plan ref from the Topology Service.
  * @member {String} service_plan_ref
  */
 OrderItem.prototype['service_plan_ref'] = undefined;
 
 /**
- * Stores the Portfolio Item ID
+ * Stores the Portfolio Item ID.
  * @member {String} portfolio_item_id
  */
 OrderItem.prototype['portfolio_item_id'] = undefined;
 
 /**
- * Current State of this order item
+ * Current state of this order item.
  * @member {module:model/OrderItem.StateEnum} state
  */
 OrderItem.prototype['state'] = undefined;

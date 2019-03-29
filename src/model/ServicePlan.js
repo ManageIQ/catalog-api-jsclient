@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -67,25 +67,25 @@ class ServicePlan {
 }
 
 /**
- * The name of the Service Plan
+ * The name of the service plan.
  * @member {String} name
  */
 ServicePlan.prototype['name'] = undefined;
 
 /**
- * The Service Plan description
+ * The service plan description.
  * @member {String} description
  */
 ServicePlan.prototype['description'] = undefined;
 
 /**
- * The unique identifier for this Service Plan
+ * The unique identifier for this service plan.
  * @member {String} id
  */
 ServicePlan.prototype['id'] = undefined;
 
 /**
- * JSON Schema for the object
+ * JSON schema for the object.
  * @member {Object} create_json_schema
  */
 ServicePlan.prototype['create_json_schema'] = undefined;

@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -58,7 +58,7 @@ class AddPortfolioItem {
 }
 
 /**
- * This is the id of the portfolio item object
+ * This is the ID of the portfolio item object.
  * @member {String} portfolio_item_id
  */
 AddPortfolioItem.prototype['portfolio_item_id'] = undefined;

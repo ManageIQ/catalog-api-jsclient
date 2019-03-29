@@ -1,6 +1,6 @@
 /**
  * Catalog API
- * This is a API to fetch and order catalog items from different cloud sources
+ * This API gets and orders catalog items from different cloud sources.
  *
  * OpenAPI spec version: 0.1.0
  * Contact: support@redhat.com
@@ -30,20 +30,23 @@ import ProgressMessage from './model/ProgressMessage';
 import ProgressMessagesCollection from './model/ProgressMessagesCollection';
 import ProviderControlParameters from './model/ProviderControlParameters';
 import ServicePlan from './model/ServicePlan';
+import ShareInfo from './model/ShareInfo';
+import SharePolicy from './model/SharePolicy';
+import UnsharePolicy from './model/UnsharePolicy';
 import AdminsApi from './api/AdminsApi';
 import DefaultApi from './api/DefaultApi';
 import UsersApi from './api/UsersApi';
 
 
 /**
-* This_is_a_API_to_fetch_and_order_catalog_items_from_different_cloud_sources.<br>
+* This_API_gets_and_orders_catalog_items_from_different_cloud_sources_.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var @ManageiqCatalogJsApiClient = require('index'); // See note below*.
-* var xxxSvc = new @ManageiqCatalogJsApiClient.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new @ManageiqCatalogJsApiClient.Yyy(); // Construct a model instance.
+* var @ManageiqCatalogApiJsclient = require('index'); // See note below*.
+* var xxxSvc = new @ManageiqCatalogApiJsclient.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new @ManageiqCatalogApiJsclient.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -55,8 +58,8 @@ import UsersApi from './api/UsersApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new @ManageiqCatalogJsApiClient.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new @ManageiqCatalogJsApiClient.Yyy(); // Construct a model instance.
+* var xxxSvc = new @ManageiqCatalogApiJsclient.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new @ManageiqCatalogApiJsclient.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -174,6 +177,24 @@ export {
      * @property {module:model/ServicePlan}
      */
     ServicePlan,
+
+    /**
+     * The ShareInfo model constructor.
+     * @property {module:model/ShareInfo}
+     */
+    ShareInfo,
+
+    /**
+     * The SharePolicy model constructor.
+     * @property {module:model/SharePolicy}
+     */
+    SharePolicy,
+
+    /**
+     * The UnsharePolicy model constructor.
+     * @property {module:model/UnsharePolicy}
+     */
+    UnsharePolicy,
 
     /**
     * The AdminsApi service constructor.

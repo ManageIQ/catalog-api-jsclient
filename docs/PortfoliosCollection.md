@@ -1,4 +1,4 @@
-# @ManageiqCatalogJsApiClient.PortfoliosCollection
+# @ManageiqCatalogApiJsclient.PortfoliosCollection
 
 ## Properties
 Name | Type | Description | Notes
